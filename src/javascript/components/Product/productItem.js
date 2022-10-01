@@ -3,6 +3,7 @@ class ProductItem {
   constructor(item) {
     this.item = item;
   }
+
   render() {
     // const productItem = document.createElement("li");
 
