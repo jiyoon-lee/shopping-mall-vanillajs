@@ -2,7 +2,7 @@ import { ProductCard } from "../components/ProductCard/index.js";
 
 class ProductPage {
   constructor() {
-    this.mainElement = document.createElement("mail");
+    this.mainElement = document.createElement("main");
     this.product = {};
   }
   // 전체 상품 정보 가져오기
@@ -15,7 +15,6 @@ class ProductPage {
   // 상품 리스트 세팅하기
   async setProductList() {
     await this.getProductData();
-    console.log(this.product);
 
     this.mainElement.classList.add("product");
 
@@ -69,6 +68,7 @@ class ProductPage {
 
     // container.appendChild(element);
 
+    // return container;
     this.setProductList();
     return this.mainElement;
   }
