@@ -1,9 +1,10 @@
 import { ProductCard } from "../components/ProductCard/index.js";
+import Component from "../core/Component.js";
 
-class ProductPage {
-  constructor() {
+class ProductPage extends Component {
+  constructor(props) {
+    super(props);
     this.mainElement = document.createElement("main");
-    this.product = {};
   }
   // 전체 상품 정보 가져오기
   async getProductData() {
@@ -35,7 +36,7 @@ class ProductPage {
     this.product.forEach((item) => {
       const productItem = document.createElement("li");
       productItem.setAttribute("class", "product-item");
-      const productCard = new ProductCard(item);
+      const productCard = new ProductCard({ item });
       productItem.appendChild(productCard.render());
       productList.appendChild(productItem);
     });
